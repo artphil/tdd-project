@@ -1,0 +1,16 @@
+Produção da aplicação via TDD
+
+1. Escreva um teste funcional para a próxima funcionalidade.
+2. Rode os testes funcionais (irá falhar). 
+3. Escreva um teste unitário para um método necessário a funcionalidade.
+4. Rode os testes unitários (irá falhar). 
+5. Escreva/Altere o método o mínimo necessário.
+6. Rode os testes unitários.
+* Caso o teste unitário falhe volte ao passo 5
+7. Refatore o código caso necessário (sempre testando).
+8. Rode os testes funcionais.
+* Caso o teste funcional falhe volte ao passo 3.
+
+Esse roteiro deve ser usado para cada criação ou alteração de funcionalidades da aplicação,
+assim garantirá que as funcionalidades requeridas serão atendidas sem danificar o que já está
+funcionando.
