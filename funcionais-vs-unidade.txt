@@ -1,0 +1,12 @@
+Diferenças entre Teste Funcional e Teste de Unidade:
+
+Velocidade:
+Testes funcionais examinam uma funcionalidade final da aplicação, com isso, 
+normalmente, é necessário instanciar uma série de dependencias que compoem a 
+funcionalidade, deixando-os mais lentos que ostestes de unidade, que por sua 
+vez, como abrangem um escopo bem menor, são muito mais rápidos.
+
+Custo:
+Pelo mesmo motivo, testes funcionais tem um custo computacional muito maior.
+Testes funcionais acionam vários métodos, e muitas vezes classes, enquanto cada
+teste de unidade é responsável por um único método. 
