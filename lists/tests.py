@@ -39,15 +39,6 @@ class HomePageTest(TestCase):
 		self.assertEqual(response['location'], '/lists/the-only-list-in-the-world/')
 
 
-	def test_displays_all_list_items(self):
-		Item.objects.create(text='itemey 1')
-		Item.objects.create(text='itemey 2')
-
-		response = self.client.get('/')
-
-		self.assertIn('itemey 1', response.content.decode())
-		self.assertIn('itemey 2', response.content.decode())
-
 class ItemModelTest(TestCase):
 
 	def test_saving_and_retrieving_items(self):
@@ -67,3 +58,14 @@ class ItemModelTest(TestCase):
 		self.assertEqual(first_saved_item.text, 'O primeiro item')
 		self.assertEqual(second_saved_item.text, 'O segundo item')
 
+class ListViewTest(TestCase):
+
+	def test_displays_all_items(self):
+		Item.objects.create(text='itemey 1')
+		Item.objects.create(text='itemey 2')
+
+		response = self.client.get('/lists/the-only-list-in-the-world/')
+
+		self.assertContains(response, 'itemey 1')
+		self.assertContains(response, 'itemey 2')
+		
